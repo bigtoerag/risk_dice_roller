@@ -53,9 +53,9 @@ def home():
             att_loses = 0
             def_loses = 0
             if att_dice_num == 3 and def_dice_num == 2:
-                att_arr = np.random.randint(1,7, size=3)
+                att_arr = np.random.randint(1,6, size=3)
                 att_arr[::-1].sort()
-                def_arr = np.random.randint(1,7, size=2)
+                def_arr = np.random.randint(1,6, size=2)
                 def_arr[::-1].sort()
                 if def_arr[0] >= att_arr[0]:
                     att_loses += 1
@@ -67,9 +67,9 @@ def home():
                     def_loses += 1
                     
             elif att_dice_num == 2 and def_dice_num == 2:
-                att_arr = np.random.randint(1,7, size=2)
+                att_arr = np.random.randint(1,6, size=2)
                 att_arr[::-1].sort()
-                def_arr = np.random.randint(1,7, size=2)
+                def_arr = np.random.randint(1,6, size=2)
                 def_arr[::-1].sort()
                 if def_arr[0] >= att_arr[0]:
                     att_loses += 1
@@ -81,9 +81,9 @@ def home():
                     def_loses += 1
             
             elif att_dice_num == 1 and def_dice_num == 2:
-                att_arr = np.random.randint(1,7, size=1)
+                att_arr = np.random.randint(1,6, size=1)
                 att_arr[::-1].sort()
-                def_arr = np.random.randint(1,7, size=2)
+                def_arr = np.random.randint(1,6, size=2)
                 def_arr[::-1].sort()
                 if def_arr[0] >= att_arr[0]:
                     att_loses += 1
@@ -91,9 +91,9 @@ def home():
                     def_loses += 1
                 
             elif att_dice_num == 3 and def_dice_num == 1:
-                att_arr = np.random.randint(1,7, size=3)
+                att_arr = np.random.randint(1,6, size=3)
                 att_arr[::-1].sort()
-                def_arr = np.random.randint(1,7, size=1)
+                def_arr = np.random.randint(1,6, size=1)
                 def_arr[::-1].sort()
                 if def_arr[0] >= att_arr[0]:
                     att_loses += 1
@@ -101,9 +101,9 @@ def home():
                     def_loses += 1
             
             elif att_dice_num == 2 and def_dice_num == 1:
-                att_arr = np.random.randint(1,7, size=2)
+                att_arr = np.random.randint(1,6, size=2)
                 att_arr[::-1].sort()
-                def_arr = np.random.randint(1,7, size=1)
+                def_arr = np.random.randint(1,6, size=1)
                 def_arr[::-1].sort()
                 if def_arr[0] >= att_arr[0]:
                     att_loses += 1
@@ -111,9 +111,9 @@ def home():
                     def_loses += 1
             
             elif att_dice_num == 1 and def_dice_num == 1:
-                att_arr = np.random.randint(1,7, size=1)
+                att_arr = np.random.randint(1,6, size=1)
                 att_arr[::-1].sort()
-                def_arr = np.random.randint(1,7, size=1)
+                def_arr = np.random.randint(1,6, size=1)
                 def_arr[::-1].sort()
                 if def_arr[0] >= att_arr[0]:
                     att_loses += 1

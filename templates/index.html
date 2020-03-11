@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<title>RISK Dice Roller</title>
+<meta charset="UTF-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="w3-content" style="w3-responsive">
+
+<!-- First Grid: Logo & About -->
+<div class="w3-row w3-blue-grey">
+  <div class="w3-half w3-black w3-container w3-center w3-padding-16">
+   <!-- <div class="w3-text-teal w3-bottombar w3-topbar">
+      <h2>Risk Dice Roller</h2>
+    </div>-->
+    <div class="w3-padding-16">
+	<form action="/" method="POST">
+
+      <div class="w3-teal w3-block w3-padding-16">Attacker Dice</div>
+      	<div class="w3-black w3-block w3-padding-16">
+    	  <label class="switch w3-margin-right">
+			  <input type="checkbox" id="att_dice_one" name="att_dice_one">
+			  <span class="slider"></span>
+		  </label>
+          <label class="switch w3-margin-right">
+			  <input type="checkbox" id="att_dice_two" name="att_dice_two">
+			  <span class="slider"></span>
+		  </label>
+          <label class="switch">
+			  <input type="checkbox" id="att_dice_three" name="att_dice_three">
+			  <span class="slider"></span>
+		  </label>
+      	</div>
+	 <div class="w3-teal w3-block w3-padding-16">Defender Dice</div>
+      	<div class="w3-black w3-block w3-padding-16">
+          	  <label class="switch w3-margin-right">
+			  <input type="checkbox" id="def_dice_one" name="def_dice_one">
+			  <span class="slider"></span>
+		  </label>
+          <label class="switch">
+			  <input type="checkbox" id="def_dice_two" name="def_dice_two">
+			  <span class="slider"></span>
+		  </label>
+        </div>
+   	  </div>
+      <button type="submit" class="w3-button w3-teal w3-padding-16" id="dice_roll">Roll the Dice</button>
+</form>
+  	</div>
+  <div class="w3-half w3-blue-grey" style="height:100%">
+    <div class="w3-padding-16 w3-center w3-blue-grey">
+      <img src="https://cdn.pixabay.com/photo/2013/07/13/13/41/dice-161377__340.png" class="w3-margin w3-circle" alt="Dice" style="width:50%">
+      <div class="w3-center-align w3-padding-16 w3-blue-grey">
+        <div class="w3-block w3-codespan w3-teal" id="att_result">{{ att_loses_feedback }}</div>
+<br>
+        <div class="w3-block w3-codespan w3-teal" id="def_result">{{ def_loses_feedback }}</div>
+	{% if att_dice_err %}
+	<p class="w3-red w3-block w3-padding-16">{{ att_dice_err }}</p>
+	{% endif %}
+	{% if def_dice_err %}
+	<p class="w3-red w3-block w3-padding-16">{{ def_dice_err }}</p>
+	{% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-black  w3-center w3-text-teal w3-codespan">
+  <div>Designed by Marcus</div>
+</footer>
+
+</body>
+</html>
